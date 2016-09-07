@@ -1,0 +1,15 @@
+Step 1: download the stock webpage
+				name="nyse_`date +%Y_%m_%d_%H_%M`.html"  
+				wget -O $name http://www.wsj.com/mdc/public/page/2_3021-activnyse-actives.html
+Step 2: run hw9.py program
+					sudo python hw9.py [name of html file you just downloaded in step 1]
+					you will be asked to select a table. Input a number to select. 0 is first item on list, etc.
+Step 3: go to the php directory
+					cd /var/www/html
+Step 4: open the hw9.php file
+					sudo gedit hw9.php
+Step 5: edit the line that reads:  $rows = mysql_query("SELECT * FROM nyse_2015_12_13_15_44");
+					change nyse_2015_12_13_15_44 to the name of the table you selected
+Step 6: run hw9.php
+					php hw9.php
+					
